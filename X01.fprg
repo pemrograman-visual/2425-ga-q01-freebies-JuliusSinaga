@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="juliu"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-09 03:54:08 PM"/>
+        <attribute name="created" value="anVsaXU7VUxLQUJPT1M7MjAyNC0xMC0wOTswMzo0MjoxNiBQTTsyNDM5"/>
+        <attribute name="edited" value="anVsaXU7VUxLQUJPT1M7MjAyNC0xMC0wOTswMzo1NDowOCBQTTsxOzI1NTE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="jlhbuku" type="Integer" array="False" size=""/>
+            <declare name="harga, totalharga, murah" type="Real" array="False" size=""/>
+            <declare name="next" type="Boolean" array="False" size=""/>
+            <assign variable="murah" expression="9999"/>
+            <assign variable="jlhbuku" expression="0"/>
+            <assign variable="totalharga" expression="0"/>
+            <assign variable="next" expression="true"/>
+            <while expression="next == true">
+                <input variable="harga"/>
+                <if expression="harga == 0">
+                    <then>
+                        <assign variable="next" expression="false"/>
+                    </then>
+                    <else>
+                        <if expression="murah &lt; harga">
+                            <then/>
+                            <else>
+                                <assign variable="murah" expression="harga"/>
+                            </else>
+                        </if>
+                        <assign variable="totalharga" expression="totalharga + harga"/>
+                        <assign variable="jlhbuku" expression="jlhbuku + 1"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="totalharga &gt;= 100">
+                <then>
+                    <assign variable="totalharga" expression="totalharga - murah"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="ToFixed(totalharga, 2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
