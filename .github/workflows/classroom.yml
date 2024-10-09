@@ -1,6 +1,6 @@
 name: Autograding Tests
 'on':
-- workflow_dispatch
+- push
 - repository_dispatch
 permissions:
   checks: write
@@ -20,15 +20,13 @@ jobs:
         test-name: x01&#45;01
         setup-command: make compile
         command: make -s test
-        input: |
+        input: |-
           24.99
           31.99
           58.15
           27.55
           0
-        expected-output: '117.69
-
-          '
+        expected-output: '117.69'
         comparison-method: exact
         timeout: 1
         max-score: 20
@@ -39,14 +37,12 @@ jobs:
         test-name: x01&#45;02
         setup-command: make compile
         command: make -s test
-        input: |
+        input: |-
           44.99
           11.99
           48.15
           0
-        expected-output: '93.14
-
-          '
+        expected-output: '93.14'
         comparison-method: exact
         timeout: 1
         max-score: 20
@@ -57,14 +53,12 @@ jobs:
         test-name: x01&#38;&#35;45&#59;03
         setup-command: make compile
         command: make -s test
-        input: |
+        input: |-
           20.00
           33.78
           44.99
           0
-        expected-output: '98.77
-
-          '
+        expected-output: '98.77'
         comparison-method: exact
         timeout: 1
         max-score: 20
@@ -75,16 +69,14 @@ jobs:
         test-name: x01&#38;&#35;45&#59;05
         setup-command: make compile
         command: make -s test
-        input: |
+        input: |-
           18.40
           33.60
           12.59
           12.59
           30.50
           0
-        expected-output: '95.09
-
-          '
+        expected-output: '95.09'
         comparison-method: exact
         timeout: 1
         max-score: 20
@@ -95,15 +87,13 @@ jobs:
         test-name: x01&#38;&#35;45&#59;05
         setup-command: make compile
         command: make -s test
-        input: |
+        input: |-
           20.40
           33.78
           44.99
           12.59
           0
-        expected-output: '99.17
-
-          '
+        expected-output: '99.17'
         comparison-method: exact
         timeout: 1
         max-score: 20
